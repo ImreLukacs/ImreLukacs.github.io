@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <script type="text/javascript" src="jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="style.css", href="https://fonts.googleapis.com/css?family=Tangerine",> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Interactive Zoomable Map</title>
+
+
+  <style>
+
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  .map-container {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+  }
+  #map-image {
+    position: absolute;
+       top: 0;
+    transform: 0.1s ease;
+  }
+  .photo-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  .photo-popup {
+    position: absolute;
+    display: none;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    transform: translate(-50%, -120%);
+    max-width: 200px;
+    text-align: center;
+  }
+  .photo-popup img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .photo-marker {
+width: 24px;
+height: 24px;
+background-image: url('marker-icon.png');
+background-size: cover;
+}
+
+#map-image {
+/* Smooth transition for transform changes */
+transition: transform 0.2s ease-out;
+}
+
+
+.photo-marker {
+transform-origin: 0 0;
+}
+
+  </style>
+</head>
+
+
+
+<body>
+  <div class="map-container" id="map-container">
+    <img src="Images/2025 Map.jpg" alt="Map" id="map-image">
+    <!-- Photo markers -->
+    <div class="photo-marker" style="top: 40%; left: 30%;" data-photo="Images/2025/1" data-caption="Lower Rd near Surrey Quays"></div>
+    <div class="photo-marker" style="top: 50%; left: 50%;" data-photo="nyc.jpg" data-caption="Night lights of Times Square"></div>
+    <div class="photo-marker" style="top: 60%; left: 70%;" data-photo="tokyo.jpg" data-caption="Cherry blossoms in Tokyo"></div>
+  </div>
+
+  <!-- Photo Popup -->
+  <div class="photo-popup" id="photo-popup">
+    <img src="" alt="Photo" id="popup-image">
+    <p id="popup-caption"></p>
+  </div>
+
+  </body>
+</html>

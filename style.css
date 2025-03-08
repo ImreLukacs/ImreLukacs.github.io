@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  .map-container {
+    width: 100vw;
+    height: 100vh;
+    transform-origin: center top;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+  }
+  #map-image {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    transform: 0.1s ease;
+    transform-origin: center top;
+  }
+  .photo-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  .photo-popup {
+    position: absolute;
+    display: none;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    transform: translate(-50%, -120%);
+    max-width: 200px;
+    text-align: center;
+  }
+  .photo-popup img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .photo-marker {
+width: 24px;
+height: 24px;
+background-image: url('marker-icon.png');
+background-size: cover;
+}
+
+#map-image {
+/* Smooth transition for transform changes */
+transition: transform 0.2s ease-out;
+}
+
+
+.photo-marker {
+transform-origin: 0 0;
+}
